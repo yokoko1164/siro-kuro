@@ -1,0 +1,52 @@
+<%= form_for(@monster) do |f| %>
+
+  <div class="form-group col-xs-12">
+    <div class="col-xs-4">
+      <%= f.label :name, '名前' %>
+      <br>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="form-group col-xs-4">
+      <%= f.label :stamina, 'スタミナ' %>
+      <div id="st_stars"></div>
+      <%= f.hidden_field :stamina, id: 'wst_stars' %>
+    </div>
+
+    <div class="form-group col-xs-4">
+      <%= f.label :offense, '攻撃力' %>
+      <%= f.range_field :offense, min: 1, max: 5 %>
+    </div>
+
+    <div class="form-group col-xs-4">
+      <%= f.label :defense, '防御力' %>
+      <%= f.range_field :defense, min: 1, max: 5 %>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="form-group col-xs-4">
+      <%= f.label :speed, '素早さ' %>
+      <%= f.range_field :speed, min: 1, max: 5 %>
+    </div>
+
+    <div class="form-group col-xs-4">
+      <%= f.label :intelligence, 'かしこさ' %>
+      <%= f.range_field :intelligence, min: 1, max: 5 %>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="form-group col-xs-8">
+      <%= f.label :text, '説明' %>
+      <br>
+      <%= f.text_area :text ,cols: 60, rows: 5 %>
+    </div>
+  </div>
+
+  <div class="col-xs-4 col-xs-offset-4">
+    <%= f.submit "登録する", class: "btn btn-large btn-primary" %>
+</div>
+<% end %>
